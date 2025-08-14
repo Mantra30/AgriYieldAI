@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgriYieldAI</title>
+</head>
+<body>
+    <h1>AgriYieldAI - Crop and Yield Predictor</h1>
+    <form method="POST" action="/predict">
+        <label for="N">Nitrogen (N):</label><br>
+        <input type="number" name="N" step="any" required><br><br>
+
+        <label for="P">Phosphorus (P):</label><br>
+        <input type="number" name="P" step="any" required><br><br>
+
+        <label for="K">Potassium (K):</label><br>
+        <input type="number" name="K" step="any" required><br><br>
+
+        <label for="temperature">Temperature (°C):</label><br>
+        <input type="number" name="temperature" step="any" required><br><br>
+
+        <label for="humidity">Humidity (%):</label><br>
+        <input type="number" name="humidity" step="any" required><br><br>
+
+        <label for="ph">Soil pH:</label><br>
+        <input type="number" name="ph" step="any" required><br><br>
+
+        <label for="rainfall">Rainfall (mm):</label><br>
+        <input type="number" name="rainfall" step="any" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+
+    {% if yield_text %}
+        <h2>{{ yield_text }}</h2>
+    {% endif %}
+</body>
+</html>
